@@ -18,13 +18,29 @@ async function postText(e) {
 
 function handleConvertText(e) {
     const summaryText = document.getElementById("summaryText")
-    const higlightedSummaryText = document.getElementById("higlightedSummaryText")
+    const img_nav = document.getElementById("nav-tab")
+    const img_top_2_bottom_map = document.getElementById("nav-home")
+    const img_central_map = document.getElementById("nav-profile")
+    // const higlightedSummaryText = document.getElementById("higlightedSummaryText")
     try {
         postText(e)
         .then(function (data) {
             if (data.success === true) {
                 summaryText.innerText = data.summary
-                higlightedSummaryText.innerHTML = data.higlighted_summary
+                img_nav.classList.remove("hidden");
+                while(img_top_2_bottom_map.firstChild) {
+                    img_top_2_bottom_map.removeChild(img_top_2_bottom_map.firstChild);
+                }
+                while(img_central_map.firstChild) {
+                    img_central_map.removeChild(img_central_map.firstChild);
+                }
+
+                // create a new timestamp     
+                var timestamp = new Date().getTime();     
+                    
+                img_top_2_bottom_map.innerHTML = `<img src="static/img/top_2_bottom_map.png?t=${timestamp}" alt="top_2_bottom_map"/>`
+                img_central_map.innerHTML = `<img src="static/img/central_map.png?t=${timestamp}" alt="central_map"/>`
+                // higlightedSummaryText.innerHTML = data.higlighted_summary
             }
         })
     } catch (error) {

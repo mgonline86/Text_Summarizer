@@ -1,5 +1,6 @@
-from flask import Flask, render_template, request, jsonify, abort
+from flask import Flask, render_template, request, jsonify, abort, send_file
 from summarize import summarize_text
+from word2vec_v_2 import main
 
 app = Flask(__name__)
 
@@ -15,6 +16,7 @@ def convert_text():
         percent = 0.2
         original_text = body['text']
         converted_data = summarize_text(original_text, percent)
+        main(original_text)
         data = {
             'success' : True,
             'original_text' : original_text,
@@ -25,5 +27,15 @@ def convert_text():
     except:
         abort(422)
 
+@app.route('/get_image_1')
+def get_image_1():
+    filename = 'static/img/top_2_bottom_map.png'
+    return send_file(filename, mimetype='image/png')
+
+@app.route('/get_image_2')
+def get_image_2():
+    filename = 'static/img/central_map.png'
+    return send_file(filename, mimetype='image/png')
+
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)

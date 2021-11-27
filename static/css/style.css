@@ -237,3 +237,13 @@ textarea, textarea:focus{
 .highlighted{
     background-color: #eeee80ad;
 }
+
+.hidden{
+    display: none;
+    visibility: hidden;
+}
+
+/* .nav-buttons{
+    display: flex;
+    align-items: center;
+} */

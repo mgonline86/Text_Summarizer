@@ -1,233 +1,391 @@
 <!DOCTYPE html>
 <html lang="en" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="static/img/logo.png" type="image/x-icon">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="static/img/logo.png" type="image/x-icon" />
     <!-- Calling CSS Files -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" /> <!--  -->
-    <link rel="stylesheet" href="static/css/bootstrap.min.css"> <!-- Bootstrap CSS File -->
-    <link rel="stylesheet" href="static/css/remixicon.css"> <!-- Remix Icon CSS File -->
-    <link rel="stylesheet" href="static/css/aos.css"> <!-- AOS CSS File -->
-    <link rel="stylesheet" href="static/css/style.css"> <!-- Style CSS File -->
-    
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!--  -->
+    <link rel="stylesheet" href="static/css/bootstrap.min.css" />
+    <!-- Bootstrap CSS File -->
+    <link rel="stylesheet" href="static/css/remixicon.css" />
+    <!-- Remix Icon CSS File -->
+    <link rel="stylesheet" href="static/css/aos.css" />
+    <!-- AOS CSS File -->
+    <link rel="stylesheet" href="static/css/style.css" />
+    <!-- Style CSS File -->
+
     <!-- Page Title -->
     <title>لخِص</title>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Start all page Div  -->
     <div class="all-page">
-        <header class="page-header">
-            <nav class="navbar navbar-expand-lg"  data-aos="fade-left" data-aos-duration="500">
-                <div class="container-fluid"> 
-                    <a class="navbar-brand ml-4" href="/">
-                        <img src="static/img/Logo.png" class="ml-2" alt="Site Logo" width="45">
-                        لخِّص
-                    </a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="ri-menu-line"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav">
-                            <li class="nav-item active">
-                                <a class="nav-link" href="/">الرئيسية</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="last-offers.html">المميزات</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">كيفية العمل</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="faqs.html">إبدأ الآن</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </header> <!-- End Page Header-->
-
-        <!-- Start Main Page -->
-        <main class="page-main">
-            <!-- Header Section -->
-            <section class="new-sec header-sec">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="single-box" data-aos="flip-up" data-aos-duration="700">
-                                <div class="content">
-                                    <h1 class="main-title">موقع لتحويل النص الطويل إلى مختصر ثم لخرائط ذهنية</h1>
-                                <p class="desc">قم بتحويل أبحاثك ومقالاتك تلقائيا بأحدث تقنيات الذكاء الإصطناعي... </p>
-                                <a href="#" class="btn">جرب الآن</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="single-box" data-aos="zoom-out-right" data-aos-duration="700">
-                                <div class="image-div">
-                                    <img src="static/img/header.png" alt="Header Image">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Featrues Section -->
-            <section class="new-sec features-sec">
-                <div class="container">
-                    <div class="sec-head text-center" data-aos="fade-up" data-aos-duration="700">
-                        <h3 class="sec-title">المميزات</h3>
-                    </div>
-                    <div class="row justify-content-around">
-                        <div class="col-md-6 col-lg-4 mb-5">
-                            <div class="single-box" data-aos="fade-down" data-aos-duration="700">
-                                <div class="top-back"></div>
-                                <div class="box-image text-center">
-                                    <img src="static/img/1.svg" alt="Image">
-                                </div>
-                                <div class="box-content">
-                                    <h4 class="box-title">تحرير سهل</h4>
-                                    <p class="box-desc">يقوم الموقع تلقائيا بتلخيص النصوص وتحويلها لخرائط ذهنية  عبر الإنترنت حيث يمكنك بسهولة التحويل يمكنك استيراد ملفات الملخصة  العديد من التنسيقات المختلفة وتصدير النسخ الخاص بك باستخدام الطوابع الزمنية ، بتنسيقات Text أو SRT أو Word.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4 mb-5">
-                            <div class="single-box second" data-aos="fade-up" data-aos-duration="700">
-                                <div class="top-back"></div>
-                                <div class="box-image text-center">
-                                    <img src="static/img/2.svg" alt="Image">
-                                </div>
-                                <div class="box-content">
-                                    <h4 class="box-title">دقيق</h4>
-                                    <p class="box-desc">مدعوم بأحدث خوارزمية الذكاء الاصطناعي. لذلك ، يمكن أن تصل دقتها إلى 99٪ (حسب اللغة). يتعلم  أنماط النصوص وتلخيصها وتتحسن دقت التلخيص  كل يوم.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4 mb-5">
-                            <div class="single-box" data-aos="fade-down" data-aos-duration="700">
-                                <div class="top-back"></div>
-                                <div class="box-image text-center">
-                                    <img src="static/img/3.svg" alt="Image">
-                                </div>
-                                <div class="box-content">
-                                    <h4 class="box-title">الإنتاجية</h4>
-                                    <p class="box-desc">نسخ النص تلقائيًا ، وتحويل النص الطويل  إلى نص قصير ثم لخريطة ذهنية ،  يولد الذكاء الاصطناعي القوي لـلموقع تدوينات كتابية عبر الإنترنت في غضون دقائق قليلة ،يستخدم الموقع من قبل العديد من المهنيين أو الطلاب</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            
-            <!-- How Site Work Sectoin -->
-            <section class="new-sec work-sec">
-                <div class="container">
-                    <div class="sec-head text-center">
-                        <h3 class="sec-title">كيف يعمل الموقع</h3>
-                    </div>
-                    <div class="row justify-content-around">
-                        <div class="col-md-6 col-lg-4 mb-5">
-                            <div class="single-box text-center" data-aos="fade-down-right" data-aos-duration="700">
-                                <div class="box-num">
-                                    <span class="num first">1</span>
-                                </div>
-                                <div class="box-content">
-                                    <h4 class="box-title">نسخ ولصق النص</h4>
-                                    <p class="box-desc">قم بلصق المحتوى في منطقة النص. يجب أن تكون الأحرف أقل من 5000 حرف في كل مرة.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4 mb-5">
-                            <div class="single-box text-center" data-aos="fade-down" data-aos-duration="700">
-                                <div class="box-num">
-                                    <span class="num second">2</span>
-                                </div>
-                                <div class="box-content">
-                                    <h4 class="box-title">تعديل وتحويل النص</h4>
-                                    <p class="box-desc">تعديل وتحويل النص لتلخيص النص ثم تحويله إلى خرائط ذهنية</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-down-left" data-aos-duration="700">
-                            <div class="single-box text-center">
-                                <div class="box-num">
-                                    <span class="num third">3</span>
-                                </div>
-                                <div class="box-content">
-                                    <h4 class="box-title">تنزيل الخريطة الذهنية</h4>
-                                    <p class="box-desc">اقم بتنزيل الخريطة الذهنية بعد تلخيص النص</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Start Try Now Section -->
-            <section class="new-sec try-sec">
-                <div class="container">
-                    <form class="form">
-                        <div class="row">
-                            <div class="col-md-6 mb-5 px-md-5">
-                                <div class="single-box" data-aos="flip-left" data-aos-duration="700">
-                                    <h4 class="box-title">أدخل النص</h4>
-                                    <textarea class="txt" maxlength="5000" id="originalText"></textarea>
-                                    <div class="txt-info text-center">
-                                        <p class="counter">5000 / <span class="value">0</span></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 mb-5 px-md-5">
-                                <div class="single-box" data-aos="flip-right" data-aos-duration="700">
-                                    <h4 class="box-title">تلخيص النص</h4>
-                                    <p class="txt" id="summaryText"></p>
-                                </div>
-                            </div>
-                            <div class="col-md-6 mb-5 px-md-5 order-10 order-md-0 mt-5 mt-md-0">
-                                <div class="single-box text-center" data-aos="flip-left" data-aos-duration="700">
-                                    <img src="static/img/footer.png" alt="Footer Image">
-                                </div>
-                            </div>
-                            <div class="col-md-6 mb-5 px-md-5" data-aos="flip-right" data-aos-duration="700">
-                                <div class="single-box">
-                                    <h4 class="box-title">الخريطة النصية</h4>
-                                    <div class="txt" id="higlightedSummaryText"></div>
-                                </div>
-                            </div>
-                            <div class="col-12" data-aos="zoom-in" data-aos-duration="700">
-                                <div class="single-box text-center py-3">
-                                    <button class="btn" onclick="handleConvertText(event)">حول</button>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </section>
-
-        </main> <!-- End Page Main --> 
-
-        <!-- Start Page Footer -->
-        <footer class="page-footer">
-            <div class="container">
-                <div class="copies text-center">
-                    <p class="copyright mb-0">الحقوق محفوظة لخِّص © 2021</p>
-                </div>
+      <header class="page-header">
+        <nav
+          class="navbar navbar-expand-lg"
+          data-aos="fade-left"
+          data-aos-duration="500"
+        >
+          <div class="container-fluid">
+            <a class="navbar-brand ml-4" href="/">
+              <img
+                src="static/img/Logo.png"
+                class="ml-2"
+                alt="Site Logo"
+                width="45"
+              />
+              لخِّص
+            </a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="ri-menu-line"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item active">
+                  <a class="nav-link" href="/">الرئيسية</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="last-offers.html">المميزات</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">كيفية العمل</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="faqs.html">إبدأ الآن</a>
+                </li>
+              </ul>
             </div>
-        </footer>
+          </div>
+        </nav>
+      </header>
+      <!-- End Page Header-->
 
-    </div> <!-- End all page Div-->
+      <!-- Start Main Page -->
+      <main class="page-main">
+        <!-- Header Section -->
+        <section class="new-sec header-sec">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6">
+                <div
+                  class="single-box"
+                  data-aos="flip-up"
+                  data-aos-duration="700"
+                >
+                  <div class="content">
+                    <h1 class="main-title">
+                      موقع لتحويل النص الطويل إلى مختصر ثم لخرائط ذهنية
+                    </h1>
+                    <p class="desc">
+                      قم بتحويل أبحاثك ومقالاتك تلقائيا بأحدث تقنيات الذكاء
+                      الإصطناعي...
+                    </p>
+                    <a href="#" class="btn">جرب الآن</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div
+                  class="single-box"
+                  data-aos="zoom-out-right"
+                  data-aos-duration="700"
+                >
+                  <div class="image-div">
+                    <img src="static/img/header.png" alt="Header Image" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Featrues Section -->
+        <section class="new-sec features-sec">
+          <div class="container">
+            <div
+              class="sec-head text-center"
+              data-aos="fade-up"
+              data-aos-duration="700"
+            >
+              <h3 class="sec-title">المميزات</h3>
+            </div>
+            <div class="row justify-content-around">
+              <div class="col-md-6 col-lg-4 mb-5">
+                <div
+                  class="single-box"
+                  data-aos="fade-down"
+                  data-aos-duration="700"
+                >
+                  <div class="top-back"></div>
+                  <div class="box-image text-center">
+                    <img src="static/img/1.svg" alt="Image" />
+                  </div>
+                  <div class="box-content">
+                    <h4 class="box-title">تحرير سهل</h4>
+                    <p class="box-desc">
+                      يقوم الموقع تلقائيا بتلخيص النصوص وتحويلها لخرائط ذهنية
+                      عبر الإنترنت حيث يمكنك بسهولة التحويل يمكنك استيراد ملفات
+                      الملخصة العديد من التنسيقات المختلفة وتصدير النسخ الخاص بك
+                      باستخدام الطوابع الزمنية ، بتنسيقات Text أو SRT أو Word.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-4 mb-5">
+                <div
+                  class="single-box second"
+                  data-aos="fade-up"
+                  data-aos-duration="700"
+                >
+                  <div class="top-back"></div>
+                  <div class="box-image text-center">
+                    <img src="static/img/2.svg" alt="Image" />
+                  </div>
+                  <div class="box-content">
+                    <h4 class="box-title">دقيق</h4>
+                    <p class="box-desc">
+                      مدعوم بأحدث خوارزمية الذكاء الاصطناعي. لذلك ، يمكن أن تصل
+                      دقتها إلى 99٪ (حسب اللغة). يتعلم أنماط النصوص وتلخيصها
+                      وتتحسن دقت التلخيص كل يوم.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-4 mb-5">
+                <div
+                  class="single-box"
+                  data-aos="fade-down"
+                  data-aos-duration="700"
+                >
+                  <div class="top-back"></div>
+                  <div class="box-image text-center">
+                    <img src="static/img/3.svg" alt="Image" />
+                  </div>
+                  <div class="box-content">
+                    <h4 class="box-title">الإنتاجية</h4>
+                    <p class="box-desc">
+                      نسخ النص تلقائيًا ، وتحويل النص الطويل إلى نص قصير ثم
+                      لخريطة ذهنية ، يولد الذكاء الاصطناعي القوي لـلموقع تدوينات
+                      كتابية عبر الإنترنت في غضون دقائق قليلة ،يستخدم الموقع من
+                      قبل العديد من المهنيين أو الطلاب
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- How Site Work Sectoin -->
+        <section class="new-sec work-sec">
+          <div class="container">
+            <div class="sec-head text-center">
+              <h3 class="sec-title">كيف يعمل الموقع</h3>
+            </div>
+            <div class="row justify-content-around">
+              <div class="col-md-6 col-lg-4 mb-5">
+                <div
+                  class="single-box text-center"
+                  data-aos="fade-down-right"
+                  data-aos-duration="700"
+                >
+                  <div class="box-num">
+                    <span class="num first">1</span>
+                  </div>
+                  <div class="box-content">
+                    <h4 class="box-title">نسخ ولصق النص</h4>
+                    <p class="box-desc">
+                      قم بلصق المحتوى في منطقة النص. يجب أن تكون الأحرف أقل من
+                      5000 حرف في كل مرة.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-4 mb-5">
+                <div
+                  class="single-box text-center"
+                  data-aos="fade-down"
+                  data-aos-duration="700"
+                >
+                  <div class="box-num">
+                    <span class="num second">2</span>
+                  </div>
+                  <div class="box-content">
+                    <h4 class="box-title">تعديل وتحويل النص</h4>
+                    <p class="box-desc">
+                      تعديل وتحويل النص لتلخيص النص ثم تحويله إلى خرائط ذهنية
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="col-md-6 col-lg-4 mb-5"
+                data-aos="fade-down-left"
+                data-aos-duration="700"
+              >
+                <div class="single-box text-center">
+                  <div class="box-num">
+                    <span class="num third">3</span>
+                  </div>
+                  <div class="box-content">
+                    <h4 class="box-title">تنزيل الخريطة الذهنية</h4>
+                    <p class="box-desc">
+                      اقم بتنزيل الخريطة الذهنية بعد تلخيص النص
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Start Try Now Section -->
+        <section class="new-sec try-sec">
+          <div class="container">
+            <form class="form">
+              <div class="row">
+                <div class="col-md-6 mb-5 px-md-5">
+                  <div
+                    class="single-box"
+                    data-aos="flip-left"
+                    data-aos-duration="700"
+                  >
+                    <h4 class="box-title">أدخل النص</h4>
+                    <textarea
+                      class="txt"
+                      maxlength="5000"
+                      id="originalText"
+                    ></textarea>
+                    <div class="txt-info text-center">
+                      <p class="counter">5000 / <span class="value">0</span></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-5 px-md-5">
+                  <div
+                    class="single-box"
+                    data-aos="flip-right"
+                    data-aos-duration="700"
+                  >
+                    <h4 class="box-title">تلخيص النص</h4>
+                    <p class="txt" id="summaryText"></p>
+                  </div>
+                </div>
+                <div
+                  class="col-md-6 mb-5 px-md-5 order-10 order-md-0 mt-5 mt-md-0"
+                >
+                  <div
+                    class="single-box text-center"
+                    data-aos="flip-left"
+                    data-aos-duration="700"
+                  >
+                    <img src="static/img/footer.png" alt="Footer Image" />
+                  </div>
+                </div>
+                <div
+                  class="col-md-6 mb-5 px-md-5"
+                  data-aos="flip-right"
+                  data-aos-duration="700"
+                >
+                  <div class="single-box">
+                    <h4 class="box-title">الخريطة النصية</h4>
+
+                    <div
+                      class="nav nav-tabs hidden"
+                      id="nav-tab"
+                      role="tablist"
+                    >
+                      <a
+                        class="nav-item nav-link active"
+                        id="nav-home-tab"
+                        data-toggle="tab"
+                        href="#nav-home"
+                        role="tab"
+                        aria-controls="nav-home"
+                        aria-selected="true"
+                        >1</a
+                      >
+                      <a
+                        class="nav-item nav-link"
+                        id="nav-profile-tab"
+                        data-toggle="tab"
+                        href="#nav-profile"
+                        role="tab"
+                        aria-controls="nav-profile"
+                        aria-selected="false"
+                        >2</a
+                      >
+                    </div>
+
+                    <div class="tab-content txt" id="nav-tabContent">
+                      <div
+                        class="tab-pane fade show active"
+                        id="nav-home"
+                        role="tabpanel"
+                        aria-labelledby="nav-home-tab"
+                      ></div>
+                      <div
+                        class="tab-pane fade"
+                        id="nav-profile"
+                        role="tabpanel"
+                        aria-labelledby="nav-profile-tab"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12" data-aos="zoom-in" data-aos-duration="700">
+                  <div class="single-box text-center py-3">
+                    <button class="btn" onclick="handleConvertText(event)">
+                      حول
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </section>
+      </main>
+      <!-- End Page Main -->
+
+      <!-- Start Page Footer -->
+      <footer class="page-footer">
+        <div class="container">
+          <div class="copies text-center">
+            <p class="copyright mb-0">الحقوق محفوظة لخِّص © 2021</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <!-- End all page Div-->
 
     <!-- Calling Js Files -->
-    <script src="static/js/jquery-3.6.0.min.js"></script> <!-- jQuery Library File -->
-    <script src="static/js/bootstrap.bundle.min.js"></script> <!-- Bootstrap Js File -->
+    <script src="static/js/jquery-3.6.0.min.js"></script>
+    <!-- jQuery Library File -->
+    <script src="static/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap Js File -->
     <script src="static/js/aos.js"></script>
-    <script src="static/js/app.js"></script> <!-- Jquery Code Js File -->
+    <script src="static/js/app.js"></script>
+    <!-- Jquery Code Js File -->
     <script src="static/js/api-calls.js"></script>
     <script>
-        AOS.init();
+      AOS.init();
     </script>
-</body>
+  </body>
 </html>
