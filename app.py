@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, jsonify, abort, send_file
+from flask import Flask, render_template, request, jsonify, abort
 from summarize import summarize_text
 from word2vec_v_2 import main
 
@@ -27,15 +27,5 @@ def convert_text():
     except:
         abort(422)
 
-@app.route('/get_image_1')
-def get_image_1():
-    filename = 'static/img/top_2_bottom_map.png'
-    return send_file(filename, mimetype='image/png')
-
-@app.route('/get_image_2')
-def get_image_2():
-    filename = 'static/img/central_map.png'
-    return send_file(filename, mimetype='image/png')
-
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
