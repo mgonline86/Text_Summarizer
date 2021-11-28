@@ -1,5 +1,6 @@
 # coding=utf8
 
+import os
 import math
 import re
 import nltk
@@ -11,6 +12,16 @@ import networkx as nx
 from bidi.algorithm import get_display
 import arabic_reshaper
 from networkx.drawing.nx_agraph import graphviz_layout, to_agraph
+
+
+static_path = 'static'
+img_path = 'img'
+file_top_2_bottom_map = 'top_2_bottom_map.png'
+file_central_map = 'central_map.png'
+
+path_top_2_bottom_map = os.path.join(static_path, img_path, file_top_2_bottom_map)
+path_central_map = os.path.join(static_path, img_path, file_central_map)
+
 
 global_stemmer = SnowballStemmer("arabic", ignore_stopwords=True)
 
@@ -397,12 +408,12 @@ def create_mind_maps(model, root, nodes):
     # Top to Bottom Layout
     A = to_agraph(G)
     A.layout('dot')
-    A.draw('static/img/top_2_bottom_map.png')
+    A.draw(path_top_2_bottom_map)
 
     # Central Layout
     B = to_agraph(G)
     B.layout('twopi')
-    B.draw('static/img/central_map.png')
+    B.draw(path_central_map)
 
 def main(txt):    
     word_frequencies_stem, sentence_terms, model = word2vec(txt)
