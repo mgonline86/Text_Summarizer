@@ -21,12 +21,16 @@ function handleConvertText(e) {
     const img_nav = document.getElementById("nav-tab")
     const img_top_2_bottom_map = document.getElementById("nav-home")
     const img_central_map = document.getElementById("nav-profile")
+    const summart_count = document.getElementById("summary-count")
     // const higlightedSummaryText = document.getElementById("higlightedSummaryText")
     try {
         postText(e)
         .then(function (data) {
             if (data.success === true) {
-                summaryText.innerText = data.summary
+                summaryText.innerText = data.summary;
+                summart_count.innerHTML = ""
+                summart_count.innerHTML = `عدد حروف التلخيص: <span class="value" style="color: green;">${data.summary.length}</span>`
+                summart_count.classList.remove("hidden");
                 img_nav.classList.remove("hidden");
                 while(img_top_2_bottom_map.firstChild) {
                     img_top_2_bottom_map.removeChild(img_top_2_bottom_map.firstChild);

@@ -1,6 +1,5 @@
 # coding=utf8
 
-import os
 import math
 import re
 import nltk
@@ -12,16 +11,6 @@ import networkx as nx
 from bidi.algorithm import get_display
 import arabic_reshaper
 from networkx.drawing.nx_agraph import graphviz_layout, to_agraph
-
-
-static_path = 'static'
-img_path = 'img'
-file_top_2_bottom_map = 'top_2_bottom_map.png'
-file_central_map = 'central_map.png'
-
-path_top_2_bottom_map = os.path.join(static_path, img_path, file_top_2_bottom_map)
-path_central_map = os.path.join(static_path, img_path, file_central_map)
-
 
 global_stemmer = SnowballStemmer("arabic", ignore_stopwords=True)
 
@@ -41,7 +30,7 @@ anna_we_akhawateha = ['إِن', 'أَن', 'كأن', 'لكن', 'ليت', 'لعل'
 zanna_we_akhawateha = ['علم', 'رأى', 'وجد', 'درى', 'ألفى', 'ظن', 'خال', 'حسب', 'زعم', 'عد', 'اعتبر', 'هب']
 
 # Adding my_custom_list
-my_custom_list = ['ربما', 'تكون', 'كون', 'فقد', 'وقد', 'والتي', 'قبل', 'لذا', 'وذلك', 'تم', 'فتم', 'يتم', 'فهم', 'فهو', 'فهي', 'ضمن', 'خلال']
+my_custom_list = ['ربما', 'تكون', 'كون', 'فقد', 'وقد', 'والتي', 'قبل', 'لذا', 'وذلك', 'تم', 'فتم', 'يتم', 'فهم', 'فهو', 'فهي', 'ضمن', 'خلال', 'لابد', 'الخ', 'مثل', 'جدا', 'كنت', 'مثال', 'منهم', 'فقط', 'تحت', 'فما', 'عبر', 'و', 'أن', 'ولم', 'لقد', 'معه', 'معا']
 
 stopwords += kann_we_akhawateha + anna_we_akhawateha + zanna_we_akhawateha + my_custom_list
 
@@ -77,7 +66,7 @@ def delete_multiple_element(list_object, indices, final_sentence_list, remove_ch
 def get_sent_voc(sent_words_list, word_frequencies_stem):
     dic = {}
     for word in sent_words_list:
-        if (stemmer.stem(word) not in stopwords) and (word not in stopwords) and (len(stemmer.stem(word)) > 0):
+        if (stemmer.stem(word) not in stopwords) and (word not in stopwords) and (len(stemmer.stem(word)) > 1):
             dic[stemmer.stem(word)] = word_frequencies_stem[stemmer.stem(word)]
     return dic
 
@@ -126,21 +115,35 @@ class StemmingHelper(object):
 
 stemmer = StemmingHelper()
 
+arabic_numbers = [
+    '\u0660',
+    '\u0661',
+    '\u0662',
+    '\u0663',
+    '\u0664',
+    '\u0665',
+    '\u0666',
+    '\u0667',
+    '\u0668',
+    '\u0669'
+]
 
 def word2vec(text):
-    text_input = araby.strip_diacritics(text)
+    text_input = araby.strip_diacritics(text) #removing arabic diacritics
 
     # Removing special characters and digits
-    formatted_text = re.sub('[^\u0600-\u06FFa-zA-Z0-9]', ' ', text_input)
+    formatted_text = re.sub('[^\u0600-\u06FFa-zA-Z]', ' ', text_input)
+    formatted_text =''.join([c for c in formatted_text if c not in arabic_numbers]) #removing arabic numbers
     formatted_text = re.sub(r'\s+', ' ', formatted_text)
     formatted_text = formatted_text.replace("،", " ")
     formatted_text = formatted_text.replace("\u061B", " ")
 
     # Converting Text To Sentences
-    sentence_list = re.split(r'([.,،])', text_input)
+    sentence_list = re.split(r'([.])', text_input)
 
     final_sentence_list = []
     for sent in sentence_list:
+        sent = ''.join([i for i in sent if not i.isdigit()]) #removing numbers
         sent = sent.replace("،", " ")
         sent = sent.replace("؟", " ")
         sent = sent.replace("\u061B", " ")
@@ -160,7 +163,8 @@ def word2vec(text):
 
     word_frequencies_stem = {}
     for word in nltk.word_tokenize(formatted_text):
-        if (stemmer.stem(word) not in stopwords) and (word not in stopwords) and (len(stemmer.stem(word)) > 0):
+        if (stemmer.stem(word) not in stopwords) and (word not in stopwords) \
+            and (len(stemmer.stem(word)) > 1):
             if stemmer.stem(word) not in word_frequencies_stem.keys():
                 word_frequencies_stem[stemmer.stem(word)] = 1
             else:
@@ -170,9 +174,9 @@ def word2vec(text):
 
     for i, sent in enumerate(final_sentence_list):
         sentence_terms.append(get_sent_voc(sent2Vec[i],word_frequencies_stem))
-
+    
     size = int(math.sqrt(len(sent2Vec)))
-    min_count = 2
+    min_count = 1 if len(sentence_list)<80 else 2
     window = 4
 
     model = Word2Vec(sent2Vec, min_count=min_count, vector_size=size, window=window)
@@ -401,19 +405,15 @@ def build_mind_map(model, root, nodes, alpha=0.2):
 def create_mind_maps(model, root, nodes):
     G = (build_mind_map(model, root, nodes, 0.2))
 
-    # same layout using matplotlib with no labels
-    pos=graphviz_layout(G, prog='dot')
-    nx.draw(G, pos, with_labels=True, arrows=True)
-
     # Top to Bottom Layout
     A = to_agraph(G)
     A.layout('dot')
-    A.draw(path_top_2_bottom_map)
+    A.draw('static/img/top_2_bottom_map.png')
 
     # Central Layout
     B = to_agraph(G)
     B.layout('twopi')
-    B.draw(path_central_map)
+    B.draw('static/img/central_map.png')
 
 def main(txt):    
     word_frequencies_stem, sentence_terms, model = word2vec(txt)
