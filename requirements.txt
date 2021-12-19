@@ -6,4 +6,7 @@ networkx==2.6.3
 nltk==3.6.3
 PyArabic==0.6.14
 python-bidi==0.4.2
-pygraphviz==1.5
+--global-option=build_ext \
+                  --global-option="-I/opt/local/include/" \
+                  --global-option="-L/opt/local/lib/" \
+                  pygraphviz
