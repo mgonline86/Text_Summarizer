@@ -6,7 +6,6 @@ word2vec.py
 windows_server.csv
 arabicstopwords0.3.zip
 testing.py
-Dockerfile
 requirementsx.txt
 requirements_all.txt
 word2vec_v_2x.py
@@ -15,3 +14,5 @@ large_text.txt
 medium_text.txt
 small_text.txt
 Articles.txt
+install nltk dependecies commands.txt
+graphviz.exe

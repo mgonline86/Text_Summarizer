@@ -10,4 +10,4 @@ python-bidi==0.4.2
 --global-option=build_ext \
                   --global-option="-I/opt/local/include/" \
                   --global-option="-L/opt/local/lib/" \
-                  pygraphviz
+                  pygraphviz==1.7
