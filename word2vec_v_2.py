@@ -423,3 +423,34 @@ def main(txt):
     root = max(word_frequencies_stem, key=word_frequencies_stem.get)
 
     create_mind_maps(model, root, nodes)
+
+
+def create_mind_maps2(model, root, nodes):
+    G = (build_mind_map(model, root, nodes, 0.2))
+
+    # Top to Bottom Layout
+    A = to_agraph(G)
+    A.layout('dot')
+    A.draw('static/img/top_2_bottom_map.png')
+    A_img = A.draw(format="png")
+
+    # Central Layout
+    B = to_agraph(G)
+    B.layout('twopi')
+    B_img = B.draw(format="png")
+
+    # print(A_img)
+    # print(B_img)
+
+    return A_img, B_img
+
+
+def main2(txt):    
+    word_frequencies_stem, sentence_terms, model = word2vec(txt)
+
+    nodes = get_top_n_terms(word_frequencies_stem, sentence_terms, len(word_frequencies_stem))
+
+    root = max(word_frequencies_stem, key=word_frequencies_stem.get)
+
+    return create_mind_maps2(model, root, nodes)
+
